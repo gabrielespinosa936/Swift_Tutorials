@@ -1,0 +1,4 @@
+use_frameworks!
+target 'JAPI1' do
+    pod 'Alamofire'
+end
