@@ -19,6 +19,7 @@ class HomeVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
     
     var arrayData = [UserDataModel]()
     var dbm = DatabaseManager()
+    var fmdb = FMDatabase()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class HomeVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.arrayData = dbm.getInstance().getData()
+        self.arrayData = dbm.getInstance().getDataFromUser()
         self.mainCellListing.reloadData()
     }
     
@@ -52,6 +53,31 @@ class HomeVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         self.navigationController?.pushViewController(objAddUserData, animated: true)
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //var delArgs = self.arrayData[indexPath.row].id
+        
+        if editingStyle == .delete
+        {
+                if self.dbm.deleteUserData(id: Int(self.arrayData[indexPath.row].id)!)
+                {
+                    self.arrayData.remove(at: indexPath.row)
+                    self.mainCellListing.reloadData()
+                }
+                
+        }
+    
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userData = self.storyboard?.instantiateViewController(withIdentifier: "AddUserData") as! AddUserData
+        userData.userDataModel = self.arrayData[indexPath.row]
+        self.navigationController?.pushViewController(userData, animated: true)
+    }
+    
     
 }
 

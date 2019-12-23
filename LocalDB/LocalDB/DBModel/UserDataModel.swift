@@ -16,7 +16,7 @@ class UserDataModel: NSObject {
 //        let phoneNumber : String
 //        let country : String
 //    }
-    
+    var id : String = ""
     var name : String = ""
     var email : String = ""
     var phoneNumber : String = ""
@@ -26,6 +26,7 @@ class UserDataModel: NSObject {
     
     init(dict: NSDictionary)
     {
+        self.id = dict.getString(key: "Userid")
         self.name = dict.getString(key: "name")
         self.email = dict.getString(key: "email")
         self.phoneNumber = dict.getString(key: "phoneNumber")

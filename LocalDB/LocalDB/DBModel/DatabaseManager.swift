@@ -26,7 +26,7 @@ class DatabaseManager : NSObject {
         sharedInstance.database?.close()
         return isSave!
     }
-    func getData() -> [UserDataModel]
+    func getDataFromUser() -> [UserDataModel]
     {
         sharedInstance.database?.open()
         var dataForUser = [UserDataModel]()
@@ -44,4 +44,10 @@ class DatabaseManager : NSObject {
         }
         return dataForUser
     }
+    func deleteUserData(id: Int) -> Bool
+    {
+        sharedInstance.database?.open()
+        return fmdb.executeUpdate("DELETE FROM User WHERE Userid = ?", withArgumentsIn: [id])
+    }
+    
 }
