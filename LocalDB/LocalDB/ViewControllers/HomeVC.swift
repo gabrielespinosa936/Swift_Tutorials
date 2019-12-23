@@ -63,6 +63,7 @@ class HomeVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
                 {
                     self.arrayData.remove(at: indexPath.row)
                     self.mainCellListing.reloadData()
+                    print(arrayData[indexPath.row].id)
                 }
                 
         }
