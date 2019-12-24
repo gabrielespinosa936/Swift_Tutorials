@@ -47,7 +47,7 @@ class DatabaseManager : NSObject {
     func deleteUserData(id: Int) -> Bool
     {
         sharedInstance.database?.open()
-        return fmdb.executeUpdate("DELETE FROM User WHERE Userid = ?", withArgumentsIn: [id])
+        return fmdb.executeUpdate("DELETE FROM User WHERE Userid", withArgumentsIn: [id])
     }
     
 }
