@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Cheers
 
+@available(iOS 13.0, *)
 class AdditionQuizVC: UIViewController {
     
     //Outlets
@@ -18,6 +19,7 @@ class AdditionQuizVC: UIViewController {
     @IBOutlet weak var lblMathSymbol: UILabel!
     @IBOutlet weak var txtAnswer: UITextField!
     @IBOutlet weak var btnSubmit: UIButton!
+    @IBOutlet weak var btnSolutions: UIButton!
     @IBOutlet weak var lblCorrectAnswer: UILabel!
     @IBOutlet weak var lblScore: UILabel!
     @IBOutlet weak var lblTimer: UILabel!
@@ -37,6 +39,7 @@ class AdditionQuizVC: UIViewController {
     let cheerView = CheerView()
     var borderWdthValue : CGFloat = 3
     var cornerRadiusValue : CGFloat = 10
+    var quizCounter : Int = 0
     
     var fmdb = MathModel()
     // rightAnswer, wrongAnswer, isCorrect, num1, num2, quizNumber
@@ -67,9 +70,14 @@ class AdditionQuizVC: UIViewController {
         cheerView.start()
     }
     
+    @IBAction func tapToSeeSolutions(_ sender: UIButton) {
+        let objSolVC = storyboard?.instantiateViewController(identifier: "DisplaySolutionsVC") as! DisplaySolutionsVC
+        self.navigationController?.pushViewController(objSolVC, animated: true)
+    }
     
 }
 //MARK: - Client Events methods..
+@available(iOS 13.0, *)
 extension AdditionQuizVC{
     
     //Timer Action Method...
@@ -115,19 +123,27 @@ extension AdditionQuizVC{
         }
         
     }
+    
 }
 //MARK: - Extension For Basic funcations
+@available(iOS 13.0, *)
 extension AdditionQuizVC{
     
     //Submit and check sum correct or incorrect
     func start()
     {
+        quizCounter = 1
         let correctAnswer = firstRandomInt + secondRandomInt
         if txtAnswer.text == "\(correctAnswer)"
         {
+            //fmdb.getInstance().saveData2(rightAnswer: "20", wrongAnswer: "49", isCorrect: "No", num1: "20", num2: "32", quizNumber: "1")
+            fmdb.getInstance().saveData2(rightAnswer: "\(correctAnswer)", wrongAnswer: "\("")", isCorrect: "Yes", num1: "\(firstRandomInt)", num2: "\(secondRandomInt)", quizNumber: "\(quizCounter)")
+
             self.correctAnswerAction()
         }else
         {
+            quizCounter = 1
+            fmdb.getInstance().saveData2(rightAnswer: "\(correctAnswer)", wrongAnswer: "\(txtAnswer)", isCorrect: "No", num1: "\(firstRandomInt)", num2: "\(secondRandomInt)", quizNumber: "\(quizCounter)")
             self.incorrectAnswerAction()
         }
         self.checkDifficulty()
@@ -232,6 +248,7 @@ extension AdditionQuizVC{
         btnSubmit.layer.cornerRadius = cornerRadiusValue
         btnSubmit.layer.borderColor = UIColor.white.cgColor
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        quizCounter = quizCounter + 1
         self.checkDifficulty()
         //self.generateMathProblem()
     }
@@ -273,6 +290,7 @@ extension AdditionQuizVC{
         lblCorrectAnswer.text = failure
         lblScore.text = "Your total score : \(score)"
         lblCorrectAnswer.shake()
+        
         
     }
 }

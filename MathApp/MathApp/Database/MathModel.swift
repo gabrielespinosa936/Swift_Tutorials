@@ -39,11 +39,11 @@ class MathModel : NSObject
         print("Here is the data \(isSave)")
     }
     
-    func getData(_ modelInfo : UserDetailsModel) -> [UserDetailsModel]
+    func getData() -> [UserDetailsModel]
     {
         var getData = [UserDetailsModel]()
         let query = "SELECT * FROM Data"
-        let data : FMResultSet? = database?.executeQuery(query, withArgumentsIn: [modelInfo.rightAnswer, modelInfo.wrongAnswers, modelInfo.isCorrect, modelInfo.num1, modelInfo.num2, modelInfo.quizNumber])
+        let data : FMResultSet? = database?.executeQuery(query, withArgumentsIn: ["data"])
         if data != nil
         {
             while (data?.next())!

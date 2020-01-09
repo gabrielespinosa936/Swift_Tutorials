@@ -44,6 +44,7 @@ class DivisionVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         self.checkDifficulty()
     }
+    @available(iOS 13.0, *)
     @IBAction func tapToGoHome(_ sender: UIButton) {
         player?.stop()
         let objHomeVC = self.storyboard?.instantiateViewController(withIdentifier: "MathQuiz") as! MathQuiz

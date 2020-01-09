@@ -57,6 +57,7 @@ class MultiplicationQuizVC: UIViewController {
         // Start
         cheerView.start()
     }
+    @available(iOS 13.0, *)
     @IBAction func tapToGoHome(_ sender: UIButton) {
         player?.stop()
         let objHomeVC = storyboard?.instantiateViewController(withIdentifier: "MathQuiz") as! MathQuiz

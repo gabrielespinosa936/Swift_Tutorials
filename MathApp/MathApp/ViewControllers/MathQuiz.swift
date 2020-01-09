@@ -8,6 +8,10 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
 class MathQuiz: UIViewController {
     @IBOutlet weak var btnAddictionQuiz: UIButton!
     @IBOutlet weak var btnSubtraction: UIButton!

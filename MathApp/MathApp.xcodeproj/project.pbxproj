@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7126CFB723C7077300C900EC /* DisplaySolutionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126CFB623C7077300C900EC /* DisplaySolutionsVC.swift */; };
 		715A3D9C23AA74290071BC7F /* AdditionQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */; };
 		715A3D9E23AA74410071BC7F /* MultiplicationQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */; };
 		71715AC823A710F4007830BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71715AC723A710F4007830BE /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		5D9E9B3A62F8F35A3F83223C /* Pods-MathApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathApp.debug.xcconfig"; path = "Target Support Files/Pods-MathApp/Pods-MathApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7126CFB623C7077300C900EC /* DisplaySolutionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySolutionsVC.swift; sourceTree = "<group>"; };
 		715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionQuizVC.swift; sourceTree = "<group>"; };
 		715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationQuizVC.swift; sourceTree = "<group>"; };
 		71715AC423A710F4007830BE /* MathApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */,
 				71EB2D9223C30C3B009CFEF9 /* DivisionVC.swift */,
 				71EB2D9423C46138009CFEF9 /* SubtractionVC.swift */,
+				7126CFB623C7077300C900EC /* DisplaySolutionsVC.swift */,
 				715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */,
 			);
 			path = ViewControllers;
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7126CFB723C7077300C900EC /* DisplaySolutionsVC.swift in Sources */,
 				71715ACA23A710F4007830BE /* MathQuiz.swift in Sources */,
 				71EB2D9F23C6CC07009CFEF9 /* MathModel.swift in Sources */,
 				71EB2D9523C46138009CFEF9 /* SubtractionVC.swift in Sources */,
