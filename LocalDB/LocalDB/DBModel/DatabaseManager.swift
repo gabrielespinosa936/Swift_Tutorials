@@ -47,7 +47,21 @@ class DatabaseManager : NSObject {
     func deleteUserData(id: Int) -> Bool
     {
         sharedInstance.database?.open()
-        return fmdb.executeUpdate("DELETE FROM User WHERE Userid", withArgumentsIn: [id])
+        let strIns = "delete from User where Userid = ?"
+        let result = sharedInstance.database?.executeUpdate(strIns, withArgumentsIn: [id])
+        return result!
+    }
+    func updateLocalCount(userid : Int, name: String, email: String, phoneNumber : String, country : String) -> Bool {
+        //let contactDB = FMDatabase(path: databasePath as String)
+//        let path = FMDatabase(path: DataBaseModel.getPath("DataForUser.db"))
+//
+//            let query = "update User set name = '\(name)',email = '\(email)',phoneNumber = '\(phoneNumber)',country = '\(country)' where Userid = \(userid)"
+//            let updatedEntry = sharedInstance.database?.executeUpdate(query, withArgumentsIn: [userid])
+//
+//            return updatedEntry!
+        let query = "update User set name = '\(name)',email = '\(email)',phoneNumber = '\(phoneNumber)',country = '\(country)' where Userid = \(userid)"
+        let updateEntry = sharedInstance.database?.executeUpdate(query, withArgumentsIn: [userid])
+        return updateEntry!
     }
     
 }

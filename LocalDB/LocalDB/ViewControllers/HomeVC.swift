@@ -61,23 +61,35 @@ class HomeVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         {
                 if self.dbm.deleteUserData(id: Int(self.arrayData[indexPath.row].id)!)
                 {
-                    self.arrayData.remove(at: indexPath.row)
-                    self.mainCellListing.reloadData()
-                    print(arrayData[indexPath.row].id)
+                    let alertController = UIAlertController(title: "AlertCotrol", message: "A standard alert.", preferredStyle: UIAlertController.Style.alert)
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) { (action) in
+                        print("User did not delete entry")
+                    }
+                    alertController.addAction(cancelAction)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action) in
+                        // ... Do something
+                        self.arrayData.remove(at: indexPath.row)
+                        self.mainCellListing.reloadData()
+                    }
+                    alertController.addAction(OKAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                
         }
-    
     }
-
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let userData = self.storyboard?.instantiateViewController(withIdentifier: "AddUserData") as! AddUserData
-        userData.userDataModel = self.arrayData[indexPath.row]
-        self.navigationController?.pushViewController(userData, animated: true)
+        let editObj = self.storyboard?.instantiateViewController(withIdentifier: "AddUserData") as! AddUserData
+        editObj.updateData = true
+        editObj.userDataModel = arrayData[indexPath.row]
+        self.navigationController?.pushViewController(editObj, animated: true)
+        
+        
     }
+ 
     
     
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,18 @@
 		71715ACD23A710F4007830BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71715ACB23A710F4007830BE /* Main.storyboard */; };
 		71715ACF23A710F7007830BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71715ACE23A710F7007830BE /* Assets.xcassets */; };
 		71715AD223A710F7007830BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71715AD023A710F7007830BE /* LaunchScreen.storyboard */; };
+		71EB2D6923BC7AC1009CFEF9 /* QuizMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71EB2D6823BC7AC1009CFEF9 /* QuizMusic.mp3 */; };
+		71EB2D9323C30C3B009CFEF9 /* DivisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB2D9223C30C3B009CFEF9 /* DivisionVC.swift */; };
+		71EB2D9523C46138009CFEF9 /* SubtractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB2D9423C46138009CFEF9 /* SubtractionVC.swift */; };
+		71EB2D9823C5C577009CFEF9 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB2D9723C5C577009CFEF9 /* DatabaseModel.swift */; };
+		71EB2D9A23C5C602009CFEF9 /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB2D9923C5C602009CFEF9 /* UserDetailsModel.swift */; };
+		71EB2D9D23C64A9C009CFEF9 /* MathAnswers.db in Resources */ = {isa = PBXBuildFile; fileRef = 71EB2D9C23C64A9C009CFEF9 /* MathAnswers.db */; };
+		71EB2D9F23C6CC07009CFEF9 /* MathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB2D9E23C6CC07009CFEF9 /* MathModel.swift */; };
+		B7E2666771A1E2CC2981D0CE /* Pods_MathApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980D68F333FD59C6D5B6FC8 /* Pods_MathApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D9E9B3A62F8F35A3F83223C /* Pods-MathApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathApp.debug.xcconfig"; path = "Target Support Files/Pods-MathApp/Pods-MathApp.debug.xcconfig"; sourceTree = "<group>"; };
 		715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionQuizVC.swift; sourceTree = "<group>"; };
 		715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationQuizVC.swift; sourceTree = "<group>"; };
 		71715AC423A710F4007830BE /* MathApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +35,15 @@
 		71715ACE23A710F7007830BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71715AD123A710F7007830BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71715AD323A710F7007830BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71EB2D6823BC7AC1009CFEF9 /* QuizMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = QuizMusic.mp3; sourceTree = "<group>"; };
+		71EB2D9223C30C3B009CFEF9 /* DivisionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionVC.swift; sourceTree = "<group>"; };
+		71EB2D9423C46138009CFEF9 /* SubtractionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtractionVC.swift; sourceTree = "<group>"; };
+		71EB2D9723C5C577009CFEF9 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		71EB2D9923C5C602009CFEF9 /* UserDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
+		71EB2D9C23C64A9C009CFEF9 /* MathAnswers.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MathAnswers.db; sourceTree = "<group>"; };
+		71EB2D9E23C6CC07009CFEF9 /* MathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathModel.swift; sourceTree = "<group>"; };
+		8980D68F333FD59C6D5B6FC8 /* Pods_MathApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MathApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DAD274F74C9F96DC279916 /* Pods-MathApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathApp.release.xcconfig"; path = "Target Support Files/Pods-MathApp/Pods-MathApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E2666771A1E2CC2981D0CE /* Pods_MathApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		675B29D5339AFD7EEE3D9AFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E9B3A62F8F35A3F83223C /* Pods-MathApp.debug.xcconfig */,
+				F8DAD274F74C9F96DC279916 /* Pods-MathApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		71715ABB23A710F4007830BE = {
 			isa = PBXGroup;
 			children = (
 				71715AC623A710F4007830BE /* MathApp */,
 				71715AC523A710F4007830BE /* Products */,
+				675B29D5339AFD7EEE3D9AFD /* Pods */,
+				91F9ADB0117B2739FC79D10B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +88,47 @@
 		71715AC623A710F4007830BE /* MathApp */ = {
 			isa = PBXGroup;
 			children = (
+				71EB2D9C23C64A9C009CFEF9 /* MathAnswers.db */,
+				71EB2D6823BC7AC1009CFEF9 /* QuizMusic.mp3 */,
 				71715AC723A710F4007830BE /* AppDelegate.swift */,
-				71715AC923A710F4007830BE /* MathQuiz.swift */,
-				715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */,
-				715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */,
+				71EB2D9B23C5C633009CFEF9 /* Database */,
+				71EB2D9623C5C48F009CFEF9 /* ViewControllers */,
 				71715ACB23A710F4007830BE /* Main.storyboard */,
 				71715ACE23A710F7007830BE /* Assets.xcassets */,
 				71715AD023A710F7007830BE /* LaunchScreen.storyboard */,
 				71715AD323A710F7007830BE /* Info.plist */,
 			);
 			path = MathApp;
+			sourceTree = "<group>";
+		};
+		71EB2D9623C5C48F009CFEF9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				71715AC923A710F4007830BE /* MathQuiz.swift */,
+				715A3D9B23AA74290071BC7F /* AdditionQuizVC.swift */,
+				71EB2D9223C30C3B009CFEF9 /* DivisionVC.swift */,
+				71EB2D9423C46138009CFEF9 /* SubtractionVC.swift */,
+				715A3D9D23AA74410071BC7F /* MultiplicationQuizVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71EB2D9B23C5C633009CFEF9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				71EB2D9E23C6CC07009CFEF9 /* MathModel.swift */,
+				71EB2D9923C5C602009CFEF9 /* UserDetailsModel.swift */,
+				71EB2D9723C5C577009CFEF9 /* DatabaseModel.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		91F9ADB0117B2739FC79D10B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8980D68F333FD59C6D5B6FC8 /* Pods_MathApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71715AD623A710F7007830BE /* Build configuration list for PBXNativeTarget "MathApp" */;
 			buildPhases = (
+				A8FDD3EC368C656F39AE70C9 /* [CP] Check Pods Manifest.lock */,
 				71715AC023A710F4007830BE /* Sources */,
 				71715AC123A710F4007830BE /* Frameworks */,
 				71715AC223A710F4007830BE /* Resources */,
+				9153F8D71D6CCF7B02961839 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +191,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EB2D9D23C64A9C009CFEF9 /* MathAnswers.db in Resources */,
 				71715AD223A710F7007830BE /* LaunchScreen.storyboard in Resources */,
+				71EB2D6923BC7AC1009CFEF9 /* QuizMusic.mp3 in Resources */,
 				71715ACF23A710F7007830BE /* Assets.xcassets in Resources */,
 				71715ACD23A710F4007830BE /* Main.storyboard in Resources */,
 			);
@@ -136,15 +201,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9153F8D71D6CCF7B02961839 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MathApp/Pods-MathApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MathApp/Pods-MathApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MathApp/Pods-MathApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8FDD3EC368C656F39AE70C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MathApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		71715AC023A710F4007830BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				71715ACA23A710F4007830BE /* MathQuiz.swift in Sources */,
+				71EB2D9F23C6CC07009CFEF9 /* MathModel.swift in Sources */,
+				71EB2D9523C46138009CFEF9 /* SubtractionVC.swift in Sources */,
 				715A3D9E23AA74410071BC7F /* MultiplicationQuizVC.swift in Sources */,
 				715A3D9C23AA74290071BC7F /* AdditionQuizVC.swift in Sources */,
 				71715AC823A710F4007830BE /* AppDelegate.swift in Sources */,
+				71EB2D9823C5C577009CFEF9 /* DatabaseModel.swift in Sources */,
+				71EB2D9323C30C3B009CFEF9 /* DivisionVC.swift in Sources */,
+				71EB2D9A23C5C602009CFEF9 /* UserDetailsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +400,7 @@
 		};
 		71715AD723A710F7007830BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9E9B3A62F8F35A3F83223C /* Pods-MathApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +418,7 @@
 		};
 		71715AD823A710F7007830BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8DAD274F74C9F96DC279916 /* Pods-MathApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

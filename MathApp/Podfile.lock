@@ -1,0 +1,22 @@
+PODS:
+  - Cheers (2.3.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+
+DEPENDENCIES:
+  - Cheers
+  - FMDB
+
+SPEC REPOS:
+  trunk:
+    - Cheers
+    - FMDB
+
+SPEC CHECKSUMS:
+  Cheers: 7e42fc09e1ca5059870b979131136d17b50ccc9c
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+
+PODFILE CHECKSUM: 738a0483097bf92fbdb0e0c2d4e9673d081eb447
+
+COCOAPODS: 1.8.4

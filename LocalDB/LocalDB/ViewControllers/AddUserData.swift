@@ -15,12 +15,22 @@ class AddUserData: UIViewController {
     @IBOutlet weak var txtCountry: UITextField!
     var dataBaseManager = DatabaseManager()
     var userDataModel = UserDataModel()
+    var updateData : Bool = false
     @IBOutlet weak var btnSubmit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if updateData
+        {
+            btnSubmit.setTitle("Update", for: .normal)
+            self.txtName.text = userDataModel.name
+            self.txtEmail.text = userDataModel.email
+            self.txtPhoneNumber.text = userDataModel.phoneNumber
+            self.txtCountry.text = userDataModel.country
+        }
     }
     @IBAction func tapToEnterData(_ sender: UIButton) {
         if txtName.text?.trimmingCharacters(in: .whitespaces) == ""
@@ -45,7 +55,8 @@ class AddUserData: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }else {
             
-            self.addUserDataToDB()
+            //self.addUserDataToDB()
+            self.checkIfUpdate()
         }
         
     }
@@ -69,8 +80,30 @@ class AddUserData: UIViewController {
         return false
     }
     
+    @IBAction func tapToGoBack(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
-    
+    func checkIfUpdate()
+    {
+        if !updateData
+        {
+            self.addUserDataToDB()
+        }else {
+            let update = dataBaseManager.updateLocalCount(userid: Int(userDataModel.id)! , name: self.txtName.text!, email: self.txtEmail.text!, phoneNumber: self.txtPhoneNumber.text!, country: self.txtCountry.text!)
+            if update
+            {
+                self.txtName.text = ""
+                self.txtEmail.text = ""
+                self.txtPhoneNumber.text = ""
+                self.txtCountry.text = ""
+            }else
+            {
+                print("Can't update")
+            }
+            
+        }
+    }
 
 
 
