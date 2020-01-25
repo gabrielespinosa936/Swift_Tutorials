@@ -19,7 +19,10 @@ class MainListing : UITableViewCell
 
 
 
+@available(iOS 13.0, *)
 class DisplaySolutionsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var btnHome: UIButton!
     @IBOutlet weak var solutionListing: UITableView!
     
     var userInfo = [UserDetailsModel]()
@@ -43,11 +46,12 @@ class DisplaySolutionsVC: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblRight.text = userInfo[indexPath.row].rightAnswer
         return cell
     }
+    @IBAction func tapToGoHome(_ sender: UIButton) {
+        let objHomeVC = self.storyboard?.instantiateViewController(withIdentifier: "MathQuiz") as! MathQuiz
+        self.navigationController?.pushViewController(objHomeVC, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
-
-
 }

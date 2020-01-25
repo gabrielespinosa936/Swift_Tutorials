@@ -42,21 +42,16 @@ class AdditionQuizVC: UIViewController {
     var quizCounter : Int = 0
     
     var fmdb = MathModel()
-    // rightAnswer, wrongAnswer, isCorrect, num1, num2, quizNumber
     var dictForUserData = UserDetailsModel()
  
     
     //MARK: - Load views
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         self.playMusic()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         self.checkDifficulty()
-        
-        //fmdb.getInstance.saveData2(rightAnswer: "20", wrongAnswer: "49", isCorrect: "No", num1: "20", num2: "32", quizNumber: "1")
-       fmdb.getInstance().saveData2(rightAnswer: "20", wrongAnswer: "49", isCorrect: "No", num1: "20", num2: "32", quizNumber: "1")
+        btnSolutions.isHidden = true
     }
     //Initialise cheer view third party
     func cheer()
@@ -71,7 +66,7 @@ class AdditionQuizVC: UIViewController {
     }
     
     @IBAction func tapToSeeSolutions(_ sender: UIButton) {
-        let objSolVC = storyboard?.instantiateViewController(identifier: "DisplaySolutionsVC") as! DisplaySolutionsVC
+        let objSolVC = self.storyboard?.instantiateViewController(withIdentifier: "DisplaySolutionsVC") as! DisplaySolutionsVC
         self.navigationController?.pushViewController(objSolVC, animated: true)
     }
     
@@ -132,6 +127,7 @@ extension AdditionQuizVC{
     //Submit and check sum correct or incorrect
     func start()
     {
+
         quizCounter = 1
         let correctAnswer = firstRandomInt + secondRandomInt
         if txtAnswer.text == "\(correctAnswer)"
@@ -142,6 +138,7 @@ extension AdditionQuizVC{
             self.correctAnswerAction()
         }else
         {
+          
             quizCounter = 1
             fmdb.getInstance().saveData2(rightAnswer: "\(correctAnswer)", wrongAnswer: "\(txtAnswer)", isCorrect: "No", num1: "\(firstRandomInt)", num2: "\(secondRandomInt)", quizNumber: "\(quizCounter)")
             self.incorrectAnswerAction()
@@ -215,8 +212,6 @@ extension AdditionQuizVC{
             print("Cancel")
         }
     }
-
-    
     //High Score animation cheer method..
     func highScoreAnimation()
     {
@@ -265,6 +260,7 @@ extension AdditionQuizVC{
         lblMathSymbol.isHidden = true
         lblCorrectAnswer.isHidden = true
         btnSubmit.setTitle("Retry", for: .normal)
+        btnSolutions.isHidden = false
         flag = true
 
     }
@@ -290,8 +286,6 @@ extension AdditionQuizVC{
         lblCorrectAnswer.text = failure
         lblScore.text = "Your total score : \(score)"
         lblCorrectAnswer.shake()
-        
-        
     }
 }
 
