@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class ToDo
+{
+    var name = ""
+    var priority = 0
+}
