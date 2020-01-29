@@ -2,11 +2,13 @@
 //  ToDoTableViewController.swift
 //  ToDoList
 //
-//  Created by Gabriel Espinosa on 1/27/20.
+//  Created by Gabriel Espinosa  on 1/28/20.
 //  Copyright © 2020 Gabriel. All rights reserved.
 //
 
 import UIKit
+
+var todos : [ToDo] = []
 
 class ToDoTableViewController: UITableViewController {
 
@@ -18,6 +20,15 @@ class ToDoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let task1 = ToDo()
+        task1.name = "Chores"
+        task1.priority = 0
+        let task2 = ToDo()
+        task2.name = "Run"
+        task2.priority = 1
+        
+        todos = [task1,task2] // Just populating the array.
     }
 
     // MARK: - Table view data source
@@ -29,18 +40,23 @@ class ToDoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return todos.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = UITableViewCell()
+        let selectedTask = todos[indexPath.row]
+        
+        if selectedTask.priority == 1
+        {
+            cell.textLabel?.text = "!" + selectedTask.name
+        }else {
+            cell.textLabel?.text = selectedTask.name
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
